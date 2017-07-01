@@ -59,4 +59,4 @@ app.get('/api/categories', function(req, res, next){
     });
 });
 
-app.listen(3000);
+app.listen(port);
