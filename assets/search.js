@@ -4,7 +4,8 @@ $(function(){
 
     }).done(function(data){
         $("#search-input").autocomplete({
-            source: data
+            source: data,
+            minLength: 2
         });
     });
 });

@@ -52,9 +52,18 @@
 	font-size: inherit;
 	overflow-x: hidden;
 	overflow-y: auto;
+	max-height: 160px;
+	width: 100px; /*don't know why this align the search result box width with that of the search box*/
 	position: fixed;
 }
 
-.ui-menu-item-wrapper .active{
-	border: 0px;
+.ui-state-active{
+	border: 0;
+	margin: 0;
+}
+
+.ui-state-active:hover{
+	border: 0;
+	margin: 0;
+	background-color: #e7e7e7;
 }
