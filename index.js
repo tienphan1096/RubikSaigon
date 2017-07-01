@@ -40,6 +40,18 @@ app.get('/api/products', function(req, res, next){
     });
 });
 
+app.get('/api/products/name', function(req, res, next){
+    Rubik.find({}, 'name -_id', function(err, rubikList){
+        if(err) throw err;
+
+        var rubikNameList = new Array();
+        rubikList.forEach(function(rubik) {
+            rubikNameList.push(rubik.name);
+        });
+        res.send(rubikNameList);
+    });
+});
+
 app.get('/api/categories', function(req, res, next){
     Category.find({}, function(err, categoryList){
         if(err) throw err;

@@ -45,3 +45,16 @@
 .info-table td:first-child{
 	text-align: right;
 }
+
+.ui-autocomplete{
+	z-index: 1031;
+	font-family: inherit;
+	font-size: inherit;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: fixed;
+}
+
+.ui-menu-item-wrapper .active{
+	border: 0px;
+}
