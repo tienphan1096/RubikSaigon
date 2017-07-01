@@ -6,7 +6,7 @@ var credentials = require('./credentials');
 var app = express();
 var port = process.env.PORT || 3000;
 
-console.log(credentials.databaseUrl);
+console.log("Port: "+port);
 
 mongoose.connect(credentials.databaseUrl);
 
