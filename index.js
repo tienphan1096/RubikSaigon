@@ -15,7 +15,7 @@ var Schema = mongoose.Schema;
 var rubikSchema = new Schema({
     name: String,
     price: Number,
-    category: {type: Number, min: 1, max: 17}
+    type: String
 });
 
 var categorySchema = new Schema({
