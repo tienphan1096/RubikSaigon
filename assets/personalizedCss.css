@@ -48,22 +48,25 @@
 
 .ui-autocomplete{
 	z-index: 1031;
-	font-family: inherit;
-	font-size: inherit;
-	overflow-x: hidden;
+	overflow-x: auto;
 	overflow-y: auto;
-	max-height: 160px;
-	width: 100px; /*don't know why this align the search result box width with that of the search box*/
 	position: fixed;
+	background-color: white;
+	list-style: none;
+	padding: 0;
+	width: 200px;
+	border-radius: 0 0 4px 4px;
+	border: 1px solid #ccc;
+	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+	max-height: 150px;
+	scro
 }
 
-.ui-state-active{
-	border: 0;
-	margin: 0;
+.ui-autocomplete li{
+	padding: 2px 12px;
+	display: block;
 }
 
-.ui-state-active:hover{
-	border: 0;
-	margin: 0;
-	background-color: #e7e7e7;
+.ui-autocomplete li:hover{
+	background-color: #e6e6e6;
 }
