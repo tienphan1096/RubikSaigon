@@ -52,6 +52,16 @@ app.get('/api/products/name', function(req, res, next){
     });
 });
 
+app.get('/api/products/find/:queryString', function(req, res, next){
+    console.log(req.params.queryString);
+    Rubik.find({"name" : {$regex : ".*"+req.params.queryString+".*"}}, function(err, rubikList){
+        if(err) throw err;
+
+        var rubikNameList = new Array();
+        res.send(rubikList);
+    });
+});
+
 app.get('/api/categories', function(req, res, next){
     Category.find({}, function(err, categoryList){
         if(err) throw err;
