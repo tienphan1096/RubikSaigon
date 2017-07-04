@@ -1,15 +1,21 @@
 .item{
 	border: 1px solid #DDDDDD;
 	border-radius: 10px;
-	padding: 10px;
-	margin-bottom: 10px;
+	padding: 30px 20px 20px 20px;
+	margin-bottom: 40px;
+	height: 300px;
 }
 
 .item:hover{
-	background-color: #F5F5F5;
 	transition: 0.5s ease;
 	cursor: pointer;
+	box-shadow: 0 8px 13px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
 }
+
+.item:hover .img-responsive{
+	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
+}
+
 .productname{
 	text-align: center;
 	margin: 0;
@@ -40,11 +46,18 @@
 
 .productimage{
 	height: 200px;
-	overflow-y: hidden;
+	text-align: center;
 }
 
-.item{
-	height: 260px;
+.img-responsive{
+	border-radius: 4px;
+	max-height: 200px;
+	display: inline-block;
+	transition: 0.5s ease;
+}
+
+.img-responsive:hover{
+	box-shadow: 0 8px 13px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
 }
 
 .info-table td{
