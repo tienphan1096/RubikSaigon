@@ -38,6 +38,15 @@
 	text-decoration: none;
 }
 
+.productimage{
+	height: 200px;
+	overflow-y: hidden;
+}
+
+.item{
+	height: 260px;
+}
+
 .info-table td{
 	padding-left: 10px; 
 }
