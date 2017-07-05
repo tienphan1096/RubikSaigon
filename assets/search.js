@@ -5,7 +5,10 @@ $(function(){
         $("#search-input").autocomplete({
             source: data,
             appendTo: "#search-div",
-            minLength: 2
+            minLength: 2,
+            open: function(event, ui){
+                $(".ui-autocomplete").css('width', $("#search-input").outerWidth());
+            }
         });
     });
 });
