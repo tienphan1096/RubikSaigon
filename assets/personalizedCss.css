@@ -69,18 +69,17 @@
 }
 
 .ui-autocomplete{
-	z-index: 1031;
+	z-index: 1;
 	overflow-x: auto;
 	overflow-y: auto;
-	position: fixed;
 	background-color: white;
 	list-style: none;
 	padding: 0;
-	width: 200px;
 	border-radius: 0 0 4px 4px;
 	border: 1px solid #ccc;
 	box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.08);
 	max-height: 150px;
+	position: absolute;
 }
 
 .ui-autocomplete li{
