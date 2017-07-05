@@ -15,7 +15,7 @@ myApp.controller('categoryListController', ['$scope', '$http', function($scope, 
 
 myApp.controller('productListController', ['$scope', '$http', function($scope, $http){
 	$scope.productsPerPage = 12;
-	$scope.pageList = new Array(1, 2, 3, 4, 5);
+	$scope.pageList = [1];
 	$scope.currentPage = 1;
 
 	$http.get("/api/products").then(
@@ -23,8 +23,14 @@ myApp.controller('productListController', ['$scope', '$http', function($scope, $
 		function(result){
 			$scope.lastPage = Math.ceil(result.data.length / $scope.productsPerPage);
 
-			$scope.fullList = result.data;
+			$scope.globalList = result.data;
+			$scope.fullList = $scope.globalList;
 			$scope.products = $scope.getProductList($scope.fullList, $scope.currentPage);
+			
+			if($scope.lastPage > 5) currentMaxPageRange = 5;
+			for (var i = 2; i <= currentMaxPageRange; i++) {
+				$scope.pageList.push(i);		
+			}
 		}
 		,
 		//error callback
@@ -69,6 +75,26 @@ myApp.controller('productListController', ['$scope', '$http', function($scope, $
 		if (pageNumber < 1) return 1
 		else if (pageNumber > lastPage) return lastPage
 		else return pageNumber;
+	}
+
+	$scope.search = function(searchKeyword){
+		console.log(searchKeyword);
+		$scope.fullList = new Array();
+		$scope.globalList.forEach(function(rubik) {
+			if(rubik.name.search(new RegExp(searchKeyword, "i")) >- 1){
+				$scope.fullList.push(rubik);
+			}
+		}, this);
+		
+		$scope.lastPage = Math.ceil($scope.fullList.length / $scope.productsPerPage);
+		$scope.pageList = [1];
+		$scope.currentPage = 1;
+		$scope.products = $scope.getProductList($scope.fullList, $scope.currentPage);
+		if($scope.lastPage > 5) currentMaxPageRange = 5
+		else currentMaxPageRange = $scope.lastPage;
+		for (var i = 2; i <= currentMaxPageRange; i++) {
+			$scope.pageList.push(i);		
+		}
 	}
 }]);
 
