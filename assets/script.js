@@ -81,7 +81,7 @@ myApp.controller('productListController', ['$scope', '$http', function($scope, $
 		console.log(searchKeyword);
 		$scope.fullList = new Array();
 		$scope.globalList.forEach(function(rubik) {
-			if(rubik.name.search(new RegExp(searchKeyword, "i")) >- 1){
+			if(rubik.name.toLowerCase().indexOf(searchKeyword.toLowerCase()) >- 1){
 				$scope.fullList.push(rubik);
 			}
 		}, this);
