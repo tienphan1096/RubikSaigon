@@ -37,7 +37,7 @@ app.get('/api/products', function(req, res, next){
     Rubik.find({}, function(err, rubikList){
         if(err) throw err;
         res.send(rubikList);
-    });
+    }).sort({_id : -1});
 });
 
 app.get('/api/products/name', function(req, res, next){
