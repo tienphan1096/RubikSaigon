@@ -94,3 +94,7 @@
 .nav-pagination{
 	text-align: center;
 }
+
+.ui-helper-hidden-accessible{
+	display: none;
+}
